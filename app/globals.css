@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gv-green: #16a34a;
+  --gv-gold: #f59e0b;
+  --gv-dark: #0a0f0a;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gv-dark text-white font-sans;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-gv-green-400 via-gv-green-300 to-gv-gold-400 bg-clip-text text-transparent;
+  }
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gv-gold-400 to-gv-gold-300 bg-clip-text text-transparent;
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .glass-dark {
+    background: rgba(10, 15, 10, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(34, 197, 94, 0.15);
+  }
+  .green-glow {
+    box-shadow: 0 0 40px rgba(34, 197, 94, 0.15), 0 0 80px rgba(34, 197, 94, 0.05);
+  }
+  .gold-glow {
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.2);
+  }
+  .section-padding {
+    @apply py-24 px-4 md:px-8 lg:px-16;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22c55e;
+}
+
+/* Particle canvas */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
