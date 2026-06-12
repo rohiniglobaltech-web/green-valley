@@ -17,7 +17,7 @@ export default function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
   return (
-    <section id="home" ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" ref={ref} className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 pb-16">
       {/* Parallax Background */}
       <motion.div className="absolute inset-0 z-0" style={{ y }}>
         <div
